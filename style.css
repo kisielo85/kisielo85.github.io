@@ -73,7 +73,7 @@ main{
     height: 300px;
 
     --back:#000000;
-    --grid:#3027d5;
+    --grid:#351265;
     --outline:var(--back);
     text-shadow: -2px -2px 0 var(--outline) , 2px -2px 0 var(--outline) , -2px 2px 0 var(--outline) , 2px 2px 0 var(--outline) ;
 
