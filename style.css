@@ -136,6 +136,9 @@ ul, h3{ margin: 0; }
     .project{
         flex-wrap: wrap;
     }
+    .image-box img{
+        max-height: 350px;
+    }
 }
 
 footer{
