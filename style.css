@@ -10,8 +10,8 @@ body{
 }
 
 header{
+    overflow: hidden;
     height: 60vh;
-    overflow-y: hidden;
     background: rgb(143,53,154);
     background: linear-gradient(28deg, rgba(143,53,154) 0%, rgb(10, 27, 69) 70%);
     display: flex; align-items: center;
@@ -51,8 +51,8 @@ b{
     
     display: block;
     padding: 0;
-    margin: 22px;
-    width: 120px;
+    margin: 18px;
+    width: 130px;
     border-radius: 100%;
     border: 3px solid #cccccc40;
 }
