@@ -24,9 +24,13 @@
     </header>
 
     <main>
-        <h1>My Projects</h1>
+        <div class="my-projects">
+            <br>
+            My Projects
+        </div>
+        
         <div style="display: flex; align-items: center;">
-            <div class="projects">
+            <div class="project">
                 <div class="box">
                     <img src="img/ee.jpg" alt="">
                 </div>
@@ -60,7 +64,6 @@
     
 
     <script>
-
         function parallax() {
             document.getElementById("floater").style.marginTop=0 - window.pageYOffset/2+"px"
         }
@@ -69,5 +72,6 @@
             parallax(); 
         });
     </script>
+
 </body>
 </html>
