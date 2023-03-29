@@ -1,19 +1,20 @@
 body{
     margin: 0;
-    background-color: rgb(6, 14, 18);
+    background-color: rgb(0, 0, 0);
     color: #ccc;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 header{
-    height: 500px;
-    position: relative;    
+    height: 60vh;
+    overflow-y: hidden;
     background: rgb(143,53,154);
-    background: linear-gradient(28deg, rgba(143,53,154,1) 0%, rgb(10, 27, 69) 70%);
-
+    background: linear-gradient(28deg, rgba(143,53,154) 0%, rgb(10, 27, 69) 70%);
     display: flex; align-items: center;
+    position: fixed;
+    width: 100%;
 }
+
 
 .name{
     width: fit-content;
@@ -39,7 +40,6 @@ b{
     font-size: 40px;
     font-weight: 600;
     display: flex; align-items: center;
-    text-align: center;
     
 }
 .pfp{
@@ -48,4 +48,57 @@ b{
     width: 120px;
     border-radius: 100%;
     border: 3px solid #cccccc40;
+}
+
+/* ---------- main ---------- */
+
+main{
+    
+    margin-top: 60vh;
+    background-color: black;
+    position: absolute;
+    
+}
+
+h1{
+    text-align: center;
+    height: 10%;
+}
+
+.projects{
+    width: 60%;
+    float: left;
+
+    display: flex;
+    align-items: center;
+}
+
+.box{
+    margin: auto;
+    width: fit-content;
+    max-width: 95%;
+    
+    background: rgb(120, 62, 169);
+    background: linear-gradient(130deg, rgb(157, 65, 170) 0%, rgb(57, 88, 167) 100%);
+
+
+    font-size: 0px;
+    max-height: 100%;
+    padding: 4px;
+    border-radius: 25px;
+}
+
+.projects img{
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.desc{
+    width: 38%;
+    padding: 1%;
+    font-size: 20px;
+}
+
+footer{
+    width: 100%;
 }
