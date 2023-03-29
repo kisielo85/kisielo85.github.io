@@ -139,6 +139,9 @@ ul, h3{ margin: 0; }
     .image-box img{
         max-height: 350px;
     }
+    .desc{
+        width: 100%;
+    }
 }
 
 footer{
