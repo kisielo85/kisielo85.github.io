@@ -25,23 +25,24 @@ header{
     margin: auto;
 }
 .short-desc{
-    font-size: 17px;
+    font-size: 20px;
     max-width: 350px;
     margin: auto;
     overflow-wrap: break-word;
     font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
 }
 b{
     font-family: 'Courier New', Courier, monospace;
     color: #cccccc70;
-    font-size: 30px;
+    font-size: 35px;
     margin-right: 5px;
 }
 .name-text{
     height: 170px;
     float: left;
 
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 600;
     display: flex; align-items: center;
     
@@ -58,7 +59,7 @@ b{
 
 
 main{
-    
+    width: 100%;
     margin-top: 60vh;
     position: absolute;
     background-color: #000;
@@ -66,7 +67,6 @@ main{
 }
 
 .my-projects{
-    width: 100vw;
     font-size: 50px;
     font-weight: bold;
     text-align: center;
@@ -77,36 +77,19 @@ main{
     --outline:var(--back);
     text-shadow: -2px -2px 0 var(--outline) , 2px -2px 0 var(--outline) , -2px 2px 0 var(--outline) , 2px 2px 0 var(--outline) ;
 
-    
-    opacity: 1;
-    
-    
-    
     background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,var(--back) 70%), repeating-linear-gradient(90deg, var(--grid) 0, var(--grid) 3%, transparent 0, transparent 50%), repeating-linear-gradient(180deg, var(--grid) 0, var(--grid) 3%, transparent 0, transparent 50%);
     background-size: 100% 100%, 1.3em 1.3em, 1.3em 1.3em;
     background-color: #000000;
-    opacity: 1;
-
-   /* background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,var(--back) 70%), linear-gradient(45deg, transparent 49%, var(--grid) 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, var(--grid) 49% 51%, transparent 51%);
-    background-size: 100% 100%, 1em 1em, 1em 1em;
-    background-color: #000000;
-    opacity: 1;*/
-
-    /*background: linear-gradient(to top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);*/
 }
 
 ul, h3{ margin: 0; }
 
 .project{
-    width: 60%;
-    aspect-ratio: 3/2;
-    float: left;
-
     display: flex;
     align-items: center;
 }
 
-.box{
+.image-box{
     margin: auto;
     width: fit-content;
     max-width: 95%;
@@ -114,16 +97,15 @@ ul, h3{ margin: 0; }
     background: rgb(120, 62, 169);
     background: linear-gradient(130deg, rgb(157, 65, 170) 0%, rgb(57, 88, 167) 100%);
 
-
     font-size: 0px;
     max-height: 100%;
     padding: 4px;
     border-radius: 25px;
 }
 
-.project img{
+.image-box img{
     max-width: 100%;
-    max-height: 550px;
+    max-height: 600px;
     border-radius: 20px;
 }
 
