@@ -48,11 +48,27 @@ b{
     
 }
 .pfp{
+    
+    display: block;
     padding: 0;
     margin: 22px;
     width: 120px;
     border-radius: 100%;
     border: 3px solid #cccccc40;
+}
+
+@media (max-width:550px) {
+    .name-text{
+        float: none;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+    }
+    .pfp{
+        margin: auto;
+        width: 160px;
+    }
+
 }
 
 /* ---------- main ---------- */
@@ -87,6 +103,7 @@ ul, h3{ margin: 0; }
 .project{
     display: flex;
     align-items: center;
+    padding-left: 2%;
 }
 
 .image-box{
@@ -110,9 +127,15 @@ ul, h3{ margin: 0; }
 }
 
 .desc{
-    width: 38%;
+    width: 40%;
     padding: 1%;
     font-size: 20px;
+}
+
+@media (max-width:850px) {
+    .project{
+        flex-wrap: wrap;
+    }
 }
 
 footer{
