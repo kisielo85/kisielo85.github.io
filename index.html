@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kisielo85</title>
-    <link rel="stylesheet" href="style.css?e=0">
+    <link rel="stylesheet" href="style.css?e=1">
 </head>
 <body>
     <header id="floater">
@@ -18,7 +18,7 @@
             </div>
             <img src="profile.jpg" alt="profile picture" class="pfp">
             <div class="short-desc">
-                Some random guy from the internet
+                some random guy from the internet
             </div>
         </div>
     </header>
@@ -84,41 +84,6 @@
         </div>
     </main>
 
-    
-
-    <script>
-        const r= document.querySelector(':root');
-        window.addEventListener("scroll", function(){
-            r.style.setProperty('--scroll',window.pageYOffset+'px')
-        });
-
-
-        var select=0;
-        const max_select=2;
-        function scroll_btn(x){
-            select+=x
-            if (select<0) select=0; else if (select>max_select) select= max_select;
-            console.log(select)
-
-            t=document.getElementById("th"+select)
-            t.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'center'
-        });
-        }
-
-        function thumb(x){
-            select=x
-            scroll_btn(0)
-            console.log(x)
-        }
-
-        function photo_scroll(){
-            s=0-document.getElementById("photo-scroll").scrollLeft/5
-            r.style.setProperty('--Hscroll',s+'px')
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
