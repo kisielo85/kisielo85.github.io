@@ -18,7 +18,7 @@
             </div>
             <img src="profile.jpg" alt="profile picture" class="pfp">
             <div class="short-desc">
-                Why do they call it oven when you of in the cold food of out hot eat the food
+                Some random guy from the internet
             </div>
         </div>
     </header>
@@ -42,6 +42,7 @@
                     <li>cute</li>
                     <li>cool 😎</li>
                     <li>amungus reference</li>
+                    <li>sussy baka</li>
                 </ul><br>
 
                 <h3>Cons:</h3>
@@ -49,7 +50,33 @@
                     <li>it melted 😭</li>
                 </ul>
             </div>
+            
         </div>
+
+        <div class="projects">
+            <input type="button" value=" < " class="scroll-btn r" onclick="scroll_btn(-1)">
+
+            <div class="photo-scroll" id="photo-scroll" onscroll="photo_scroll()">
+                <div style="min-width: 50%"></div>
+
+                <div class="thumb" id="th0" onclick="thumb(0)">
+                    sussy
+                </div>
+                <div class="thumb" id="th1" onclick="thumb(1)">
+                    ee
+                </div>
+                <div class="thumb" id="th2" onclick="thumb(2)">
+                    baka
+                </div>
+
+                <div style="min-width: 50%"></div>
+            </div>
+            
+            <input type="button" value=" > " class="scroll-btn l" onclick="scroll_btn(1)">
+        </div>
+    
+        
+
         
         <b style="font-size: 15px;">work in progress, css trudny ąłłłłłłłłł</b>
         <div style="height: 40vh;">
@@ -58,16 +85,39 @@
     </main>
 
     
-    
 
     <script>
-        function parallax() {
-            document.getElementById("floater").style.marginTop=0 - window.pageYOffset/2+"px"
+        const r= document.querySelector(':root');
+        window.addEventListener("scroll", function(){
+            r.style.setProperty('--scroll',window.pageYOffset+'px')
+        });
+
+
+        var select=0;
+        const max_select=2;
+        function scroll_btn(x){
+            select+=x
+            if (select<0) select=0; else if (select>max_select) select= max_select;
+            console.log(select)
+
+            t=document.getElementById("th"+select)
+            t.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
         }
 
-        window.addEventListener("scroll", function(){
-            parallax(); 
-        });
+        function thumb(x){
+            select=x
+            scroll_btn(0)
+            console.log(x)
+        }
+
+        function photo_scroll(){
+            s=0-document.getElementById("photo-scroll").scrollLeft/5
+            r.style.setProperty('--Hscroll',s+'px')
+        }
     </script>
 
 </body>

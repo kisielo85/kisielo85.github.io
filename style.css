@@ -1,5 +1,8 @@
 :root{
     --font: #ccc;
+    --scroll: 0px;
+    --back: #000;
+    --Hscroll:0px;
 }
 
 body{
@@ -9,16 +12,19 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
+
 header{
     overflow: hidden;
     height: 60vh;
+    margin-top: calc(-60vh - var(--scroll)/2);
     background: rgb(143,53,154);
     background: linear-gradient(28deg, rgba(143,53,154) 0%, rgb(10, 27, 69) 70%);
     display: flex; align-items: center;
     position: fixed;
+    z-index: -1;
     width: 100%;
 }
-
 
 .name{
     width: fit-content;
@@ -26,11 +32,11 @@ header{
 }
 .short-desc{
     font-size: 20px;
-    max-width: 350px;
+    max-width: 470px;
+    width: fit-content;
     margin: auto;
     overflow-wrap: break-word;
     font-family: 'Courier New', Courier, monospace;
-    text-align: justify;
 }
 b{
     font-family: 'Courier New', Courier, monospace;
@@ -77,8 +83,8 @@ b{
 main{
     width: 100%;
     margin-top: 60vh;
-    position: absolute;
-    background-color: #000;
+    z-index: 10;
+    background-color: #000000;
     
 }
 
@@ -143,6 +149,59 @@ ul, h3{ margin: 0; }
         width: 100%;
     }
 }
+
+/* scroll */
+
+.projects{
+    width: 100%;    
+    height: 200px;
+
+
+    background-color: #000000;
+    --back:#000000;
+    --grid:#0f317e;
+    --outline:var(--back);
+    
+    background: linear-gradient(to bottom, var(--back) 0%,rgba(255,255,255,0) 50%,var(--back) 100%), repeating-linear-gradient(90deg, var(--grid) 0, var(--grid) 3%, transparent 0, transparent 50%), repeating-linear-gradient(180deg, var(--grid) 0, var(--grid) 3%, transparent 0, transparent 50%);
+    background-size: 100% 100%, 3em 3em, 3em 3em;
+    background-position: var(--Hscroll) 0px;
+}
+
+.photo-scroll{
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    overflow-x: hidden;
+}
+
+.scroll-btn{
+    height: 200px;
+    width: fit-content;
+    position: absolute;
+
+    border: none;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ccc;
+}
+.r{left: 0; background: linear-gradient(90deg, var(--back) 60%, rgba(0, 0, 0, 0) 100%);}
+.l{right: 0; background: linear-gradient(-90deg, var(--back) 60%, rgba(0, 0, 0, 0) 100%);}
+.scroll-btn:hover{ color: #fff;}
+.scroll-btn:active{ color: #999;}
+
+
+.thumb{
+    min-width: 200px;
+    height: calc(100% - 104px);
+
+    background-color: #000;
+    border: 2px white solid;
+    border-radius: 8px;
+    margin: 50px 30px 50px 30px;
+    
+    text-align: center;
+}
+
 
 footer{
     width: 100%;
