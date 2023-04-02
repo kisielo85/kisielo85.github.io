@@ -18,6 +18,7 @@ function scroll_btn(x){
     inline: 'center'
 });
 }
+scroll_btn(0)
 
 function thumb(x){
     select=x
