@@ -1,7 +1,22 @@
-const r= document.querySelector(':root');
+const r= document.querySelector(':root'); //parallax
 window.addEventListener("scroll", function(){
     r.style.setProperty('--scroll',window.pageYOffset+'px')
 });
+
+
+gallery={
+    'amogi':{pos:0,max:4}
+}
+
+
+function img_btn(x,dir){
+    g=gallery[dir]
+    g.pos+=x
+    if (g.pos<0) g.pos=g.max; else if (g.pos>g.max) g.pos=0;
+
+    img=document.getElementById(dir)
+    img.src=`gallery/amogi/${g.pos}.jpg`
+}
 
 
 var select=0;
@@ -18,7 +33,6 @@ function scroll_btn(x){
     inline: 'center'
 });
 }
-scroll_btn(0)
 
 function thumb(x){
     select=x

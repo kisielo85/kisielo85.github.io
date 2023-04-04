@@ -24,17 +24,19 @@
     </header>
 
     <main>
-        <div class="my-projects">
+        <div class="big-text">
             <br>
             My Projects
         </div>
-        
+
         <div class="project">
+            <h2 class="p-name">Snow amogi</h2>
             <div class="image-box">
-                <img src="img/ee.jpg" alt="">
+                <input type="button" class="img-btn L" onclick="img_btn(-1,'amogi')">
+                <input type="button" class="img-btn R" onclick="img_btn(1,'amogi')">
+                <img src="gallery/amogi/0.jpg" id='amogi' alt="">
             </div>
             <div class="desc">
-                <h2>Snow amogi</h2>
                 <p>I made this small amogus from snow</p>
                 <h3>Pros:</h3>
                 <ul>
@@ -49,10 +51,29 @@
                 <ul>
                     <li>it melted 😭</li>
                 </ul>
+                
             </div>
             
         </div>
 
+        <br><br>
+
+        <div class="project p-reverse">
+            <div class="image-box">
+                <input type="button" class="img-btn L" value="">
+                <input type="button" class="img-btn R" value="">
+                <img src="gallery/pixel_finder/0.jpg" alt="">
+            </div>
+            
+            <h2 class="p-name">Pixel finder 2022</h2>
+            <div class="desc">
+                <p>a website allowing <a href="https://www.reddit.com/r/place/">r/place</a> users to view their pixels</p>
+            </div>
+            
+            
+        </div>
+
+        <br><br>
         <div class="projects">
             <input type="button" value=" < " class="scroll-btn r" onclick="scroll_btn(-1)">
 
