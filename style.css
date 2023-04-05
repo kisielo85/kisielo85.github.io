@@ -122,7 +122,6 @@ h2{
 }
 
 
-
 .image-box{
     position: relative;
     margin-left: auto;
@@ -130,14 +129,25 @@ h2{
     width: fit-content;
     height: fit-content;
     max-width: 95%;
-    max-height: 100%;
     
     background: rgb(120, 62, 169);
-    background: linear-gradient(130deg, rgb(157, 65, 170) 0%, rgb(57, 88, 167) 100%);
-
+    --from:rgb(157, 65, 170);
+    --to:rgb(57, 88, 167);
+    background: linear-gradient(130deg, var(--from), var(--to));
     font-size: 0px;
     padding: 4px;
     border-radius: 24px;
+
+    display: grid;
+    isolation: isolate;
+}
+
+@keyframes fade {
+    0%{opacity: 1; visibility: visible;}
+    100%{opacity: 0; visibility: hidden;}
+}
+.fade{
+    animation: fade 0.25s linear;
 }
 
 .p-reverse .image-box{
@@ -146,6 +156,12 @@ h2{
 }
 
 .image-box img{
+    aspect-ratio: 4/3;
+    object-fit: cover;
+
+    -webkit-animation-fill-mode: forwards;
+    grid-column: 1;
+    grid-row: 1;
     width: 100%;
     max-height: 600px;
     border-radius: 20px;
@@ -176,6 +192,7 @@ h2{
 .img-btn:hover{background-color: #ffffff49;}
 .img-btn:active{background-color: #c9c9c920;}
 
+
 .desc{
     grid-area: desc;
     width: fit-content;
@@ -184,6 +201,23 @@ h2{
     padding: 1%;
     font-size: 20px;
 }
+
+.icon::before{
+    content: "";
+    display: block;
+    float: left;
+    margin-right: 5px;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+}
+.reddit::before{background: url("icons/reddit.png")}
+.github::before{background: url("icons/github.png")}
+.link::before{background: url("icons/link.png")}
+/*  icons: https://www.iconpacks.net/  */
+
+a{color: #256dbf;}
+a:visited{color: #7b44a9;}
 
 @media (max-width:850px) {
     .project{

@@ -5,7 +5,8 @@ window.addEventListener("scroll", function(){
 
 
 gallery={
-    'amogi':{pos:0,max:4}
+    'amogi':{pos:0,max:4},
+    'pixel':{pos:0,max:2}
 }
 
 
@@ -13,9 +14,24 @@ function img_btn(x,dir){
     g=gallery[dir]
     g.pos+=x
     if (g.pos<0) g.pos=g.max; else if (g.pos>g.max) g.pos=0;
+    
+    frontimg=document.getElementById(dir+'0')
+    backimg=document.getElementById(dir+'1')
+    if(frontimg.style.zIndex==2){
+        [backimg,frontimg]=[frontimg,backimg]
+    }
 
-    img=document.getElementById(dir)
-    img.src=`gallery/amogi/${g.pos}.jpg`
+    frontimg.style.zIndex=2 //swap positions
+
+    backimg.style.zIndex=1
+    backimg.classList.remove("fade");
+
+    //fade old img once new is loaded
+    backimg.onload = function () {
+        frontimg.classList.add("fade");
+    }
+    backimg.src=`gallery/${dir}/${g.pos}.jpg`
+    
 }
 
 
