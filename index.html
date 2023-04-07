@@ -13,7 +13,7 @@
             <div class="name-text">
                 <div>
                     Przemek B.<br>
-                    <b class="fade">aka</b>kisielo85
+                    <b class="aka">aka</b>kisielo85
                 </div>
             </div>
             <img src="profile.jpg" alt="profile picture" class="pfp">
@@ -56,10 +56,8 @@
             
         </div>
 
-        <br><br>
-
         <div class="project p-reverse">
-            <div class="image-box" style="background: linear-gradient(-20deg, var(--from), var(--to));">
+            <div class="image-box" style="background: linear-gradient(20deg, var(--from), var(--to));">
                 <input type="button" class="img-btn L" onclick="img_btn(-1,'pixel')">
                 <input type="button" class="img-btn R" onclick="img_btn(1,'pixel')">
                 <img src="gallery/pixel/0.jpg" style="z-index: 2;" id='pixel0'>
@@ -68,7 +66,7 @@
             
             <h2 class="p-name">Pixel finder 2022</h2>
             <div class="desc">
-                <p>a website allowing <a target="_blank" href="https://www.reddit.com/r/place/">r/place</a> users to view their pixels</p>
+                <p>website allowing <a target="_blank" href="https://www.reddit.com/r/place/">r/place</a> users to view their pixels</p>
                 <p><a class="link icon" target="_blank" href="http://kisielo85.cba.pl/place2022">kisielo85.cba.pl/place2022</a></p>
                 <p><a class="reddit icon" target="_blank" href="https://www.reddit.com/r/place/comments/u79a4s/website_that_shows_users_placed_pixels/">original post</a></p>
                 <p><a class="github icon" target="_blank" href="https://github.com/kisielo85/pixel_finder-place2022">github repo</a></p>
@@ -76,39 +74,57 @@
             
             
         </div>
-
-        <br><br>
-        <div class="projects">
-            <input type="button" value=" < " class="scroll-btn r" onclick="scroll_btn(-1)">
-
-            <div class="photo-scroll" id="photo-scroll" onscroll="photo_scroll()">
-                <div style="min-width: 50%"></div>
-
-                <div class="thumb" id="th0" onclick="thumb(0)">
-                    sussy
-                </div>
-                <div class="thumb" id="th1" onclick="thumb(1)">
-                    ee
-                </div>
-                <div class="thumb" id="th2" onclick="thumb(2)">
-                    baka
-                </div>
-
-                <div style="min-width: 50%"></div>
+        
+        <div class="project">
+            <h2 class="p-name">Neon Sector</h2>
+            <div class="image-box" style="background: linear-gradient(-150deg, var(--from), var(--to));">
+                <input type="button" class="img-btn L" onclick="img_btn(-1,'neon_sector')">
+                <input type="button" class="img-btn R" onclick="img_btn(1,'neon_sector')">
+                <img src="gallery/neon_sector/0.jpg" style="z-index: 2;" id='neon_sector0'>
+                <img src="gallery/neon_sector/0.jpg" style="z-index: 1;" id='neon_sector1'>
+            </div>
+            <div class="desc">
+                <p>a game made in Godot Engine</p>
+                <a target="_blank" class="link icon" href="https://kisielo85.itch.io/neon-sector">kisielo85.itch.io/neon-sector</a>
             </div>
             
-            <input type="button" value=" > " class="scroll-btn l" onclick="scroll_btn(1)">
-        </div>
-    
-        
-
-        
-        <b style="font-size: 15px;">work in progress, css trudny ąłłłłłłłłł</b>
-        <div style="height: 40vh;">
-
         </div>
     </main>
 
+    <!-- work in progress
+    <div class="other">
+        <div class="stuff">
+            <img src="gallery/amogi/2.jpg" alt="">
+        </div>
+        <div class="desc">
+            <h2>desc</h2>
+            sus amogus suusususss
+        </div>
+        <div class="list">
+            <div class="bar">
+                <input type="button" value="sort" class="btn">
+                <input type="button" value="filter" class="btn">
+                <input type="text" placeholder="search" class="search">
+            </div>
+
+        </div>
+    </div>
+    -->
+
+    <footer>
+        <h1>Find me on:</h1>
+        <p><a target="_blank" class="github icon" href="https://github.com/kisielo85">github</a></p>
+        <p><a target="_blank" class="reddit icon" href="https://www.reddit.com/user/kisielo85">reddit</a></p>
+        <p><a target="_blank" class="youtube icon" href="https://www.youtube.com/@kisielo85">youtube</a></p>
+        <p><a target="_blank" class="itchio icon" href="https://kisielo85.itch.io/">itch.io</a></p>
+        <p><b class="discord icon">discord:</b> kisielo85#0155</p>
+    </footer>
+
+
+    
+    <div style="height: 40vh; background-color: black;">
+        <b style="font-size: 15px;">work in progress, css trudny ąłłłłłłłłł</b>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

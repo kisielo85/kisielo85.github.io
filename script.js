@@ -6,7 +6,8 @@ window.addEventListener("scroll", function(){
 
 gallery={
     'amogi':{pos:0,max:4},
-    'pixel':{pos:0,max:2}
+    'pixel':{pos:0,max:2},
+    'neon_sector':{pos:0,max:3},
 }
 
 

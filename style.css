@@ -36,7 +36,7 @@ header{
     overflow-wrap: break-word;
     font-family: 'Courier New', Courier, monospace;
 }
-b{
+b.aka{
     font-family: 'Courier New', Courier, monospace;
     color: #cccccc70;
     font-size: 35px;
@@ -52,8 +52,6 @@ b{
     
 }
 .pfp{
-    
-    display: block;
     padding: 0;
     margin: 18px;
     width: 130px;
@@ -69,6 +67,7 @@ b{
         margin: auto;
     }
     .pfp{
+        display: block;
         margin: auto;
         width: 160px;
     }
@@ -105,6 +104,7 @@ h2{
     text-align: center;
 }
 .project{
+    padding-bottom: 50px;
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: auto 1fr;
@@ -114,11 +114,13 @@ h2{
     grid-gap: 1%;
 }
 
-.p-reverse{/* desc po drugiej stronie */
-    grid-template-columns: 3fr 4fr;
-    grid-template-areas:
-    "p-name img"
-    "desc img";
+.desc{
+    grid-area: desc;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    font-size: 20px;
 }
 
 
@@ -142,6 +144,32 @@ h2{
     isolation: isolate;
 }
 
+.p-reverse{/* desc po drugiej stronie */
+    grid-template-columns: 3fr 4fr;
+    grid-template-areas:
+    "p-name img"
+    "desc img";
+}
+.p-reverse .image-box{
+    margin-left: none;
+    margin-right: auto;
+}
+
+@media (max-width:850px) {
+    .project{
+        grid-template-columns: none;
+        grid-template-areas: "p-name""img""desc";
+    }
+    .image-box img{
+        max-height: 350px;
+    }
+    .image-box{
+        margin: auto;
+    }
+}
+
+
+/* gallery stuff*/
 @keyframes fade {
     0%{opacity: 1; visibility: visible;}
     100%{opacity: 0; visibility: hidden;}
@@ -150,20 +178,15 @@ h2{
     animation: fade 0.25s linear;
 }
 
-.p-reverse .image-box{
-    margin-left: none;
-    margin-right: auto;
-}
-
 .image-box img{
     aspect-ratio: 4/3;
     object-fit: cover;
 
-    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
     grid-column: 1;
     grid-row: 1;
     width: 100%;
-    max-height: 600px;
+    max-height: 550px;
     border-radius: 20px;
 }
 
@@ -193,15 +216,13 @@ h2{
 .img-btn:active{background-color: #c9c9c920;}
 
 
-.desc{
-    grid-area: desc;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1%;
-    font-size: 20px;
-}
-
+/* link icons */
+.reddit::before{background: url("icons/reddit.png")}
+.github::before{background: url("icons/github.png")}
+.youtube::before{background: url("icons/youtube.png")}
+.itchio::before{background: url("icons/itchio.png")}
+.link::before{background: url("icons/link.png")}
+.discord::before{background: url("icons/discord.png")}
 .icon::before{
     content: "";
     display: block;
@@ -209,97 +230,71 @@ h2{
     margin-right: 5px;
     width: 24px;
     height: 24px;
+    background-size: 24px;
     background-repeat: no-repeat;
 }
-.reddit::before{background: url("icons/reddit.png")}
-.github::before{background: url("icons/github.png")}
-.link::before{background: url("icons/link.png")}
+.icon{
+    text-align: center;
+    align-self: center;
+}
 /*  icons: https://www.iconpacks.net/  */
 
 a{color: #256dbf;}
 a:visited{color: #7b44a9;}
-
-@media (max-width:850px) {
-    .project{
-        grid-template-columns: none;
-        grid-template-areas: "p-name""img""desc";
-    }
-    .image-box img{
-        max-height: 350px;
-    }
-    .image-box{
-        margin: auto;
-    }
+b.discord{
+    color: #8cbeff;
 }
 
+/* more stuff */
 
-/* gallery */
-
-.gallery{
+.other{
+    
+    padding: 2%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 5fr 3fr 4fr;
+    grid-gap: 1%;
+    grid-template-areas:
+    ".. desc ..";
     background-color: #351265;
     bottom:0;
 }
 
-
-
-
-
-
-
-
-/* scroll */
-
-.projects{
-    width: 100%;    
-    height: 200px;
-
-
-    background-color: #000000;
-    --back:#000000;
-    --grid:#0f317e;
-    --outline:var(--back);
-    
-    background: linear-gradient(to bottom, var(--back) 0%,rgba(255,255,255,0) 50%,var(--back) 100%), repeating-linear-gradient(90deg, var(--grid) 0, var(--grid) 3%, transparent 0, transparent 50%), repeating-linear-gradient(180deg, var(--grid) 0, var(--grid) 3%, transparent 0, transparent 50%);
-    background-size: 100% 100%, 3em 3em, 3em 3em;
-    background-position: var(--Hscroll) 0px;
+.stuff{
+    background-color: #14ac0a;
+}
+.stuff img{
+    max-width: 100%;
+    max-height: 400px;
 }
 
-.photo-scroll{
+.other .desc{
+    background-color: #8cbeff;
+}
+
+
+.list{
+    background-color: #bb8520;
+}
+.bar{
     width: 100%;
-    height: 100%;
+    background-color: #525252;
     display: inline-flex;
-    overflow-x: hidden;
+}
+.bar .btn{
+    min-width:25%;
+    padding: 0;
+
+}
+.bar .search{
+    width: 50%;
 }
 
-.scroll-btn{
-    height: 200px;
-    width: fit-content;
-    position: absolute;
-
-    border: none;
-    font-size: 50px;
-    font-weight: 900;
-    color: #ccc;
-}
-.r{left: 0; background: linear-gradient(90deg, var(--back) 60%, rgba(0, 0, 0, 0) 100%);}
-.l{right: 0; background: linear-gradient(-90deg, var(--back) 60%, rgba(0, 0, 0, 0) 100%);}
-.scroll-btn:hover{ color: #fff;}
-.scroll-btn:active{ color: #999;}
 
 
-.thumb{
-    min-width: 200px;
-    height: calc(100% - 104px);
-
-    background-color: #000;
-    border: 2px white solid;
-    border-radius: 8px;
-    margin: 50px 30px 50px 30px;
-    
-    text-align: center;
-}
 
 
 footer{
-    width: 100%;
+   background-color: #000;
+   padding: 20px;
 }
