@@ -14,10 +14,10 @@ body{
 
 header{
     overflow: hidden;
-    height: 60vh;
+    height: 120vh;
     margin-top: calc(-60vh - var(--scroll)/2);
     background: rgb(95, 53, 154);
-    background: linear-gradient(28deg, rgba(143,53,154) 0%, rgb(10, 27, 69) 70%);
+    background: linear-gradient(28deg, rgba(143,53,154) 50%, rgb(10, 27, 69) 85%);
     display: flex; align-items: center;
     position: fixed;
     z-index: -1;
@@ -27,6 +27,7 @@ header{
 .name{
     width: fit-content;
     margin: auto;
+    padding-bottom: 60vh;
 }
 .short-desc{
     font-size: 20px;
@@ -295,6 +296,11 @@ b.discord{
 
 
 footer{
-   background-color: #000;
-   padding: 20px;
+    background-color: #000;
+    padding: 20px;
+}
+.link_list{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 5;
 }

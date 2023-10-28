@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kisielo85</title>
-    <link rel="stylesheet" href="style.css?e=2">
+    <link rel="stylesheet" href="style.css?e=3">
 </head>
 <body>
     <header id="floater">
@@ -16,7 +16,7 @@
                     <b class="aka">aka</b>kisielo85
                 </div>
             </div>
-            <img src="profile.jpg" alt="profile picture" class="pfp">
+            <img src="img/profile.jpg" alt="profile picture" class="pfp">
             <div class="short-desc">
                 some random guy from the internet
             </div>
@@ -56,18 +56,19 @@
             
         </div>
 
-        <div class="project p-reverse">
-            <div class="image-box" style="background: linear-gradient(20deg, var(--from), var(--to));">
+        <div class="project">
+            <div class="image-box" style="background: linear-gradient(50deg, var(--from), var(--to));">
                 <input type="button" class="img-btn L" onclick="img_btn(-1,'pixel')">
                 <input type="button" class="img-btn R" onclick="img_btn(1,'pixel')">
                 <img src="gallery/pixel/0.jpg" style="z-index: 2;" id='pixel0'>
                 <img src="gallery/pixel/0.jpg" style="z-index: 1;" id='pixel1'>
             </div>
             
-            <h2 class="p-name">Pixel finder 2022</h2>
+            <h2 class="p-name">Pixel finder</h2>
             <div class="desc">
                 <p>website allowing <a target="_blank" href="https://www.reddit.com/r/place/">r/place</a> users to view their pixels</p>
-                <p><a class="link icon" target="_blank" href="http://kisielo85.cba.pl/place2022">kisielo85.cba.pl/place2022</a></p>
+                <p>works for the 2017, 2022 and 2023 events</p>
+                <p><a class="link icon" target="_blank" href="http://kisielo85.cba.pl/place">kisielo85.cba.pl/place</a></p>
                 <p><a class="reddit icon" target="_blank" href="https://www.reddit.com/r/place/comments/u79a4s/website_that_shows_users_placed_pixels/">original post</a></p>
                 <p><a class="github icon" target="_blank" href="https://github.com/kisielo85/pixel_finder-place2022">github repo</a></p>
             </div>
@@ -77,7 +78,7 @@
         
         <div class="project">
             <h2 class="p-name">Neon Sector</h2>
-            <div class="image-box" style="background: linear-gradient(-150deg, var(--from), var(--to));">
+            <div class="image-box">
                 <input type="button" class="img-btn L" onclick="img_btn(-1,'neon_sector')">
                 <input type="button" class="img-btn R" onclick="img_btn(1,'neon_sector')">
                 <img src="gallery/neon_sector/0.jpg" style="z-index: 2;" id='neon_sector0'>
@@ -110,14 +111,16 @@
         </div>
     </div>
     -->
-
+    
     <footer>
-        <h1>Find me on:</h1>
-        <p><a target="_blank" class="github icon" href="https://github.com/kisielo85">github</a></p>
-        <p><a target="_blank" class="reddit icon" href="https://www.reddit.com/user/kisielo85">reddit</a></p>
-        <p><a target="_blank" class="youtube icon" href="https://www.youtube.com/@kisielo85">youtube</a></p>
-        <p><a target="_blank" class="itchio icon" href="https://kisielo85.itch.io/">itch.io</a></p>
-        <p><b class="discord icon">discord:</b> kisielo85#0155</p>
+        <h2>Find me on:</h2>
+        <div class="link_list">
+            <p><a target="_blank" class="github icon" href="https://github.com/kisielo85">github</a></p>
+            <p><a target="_blank" class="reddit icon" href="https://www.reddit.com/user/kisielo85">reddit</a></p>
+            <p><a target="_blank" class="youtube icon" href="https://www.youtube.com/@kisielo85">youtube</a></p>
+            <p><a target="_blank" class="itchio icon" href="https://kisielo85.itch.io/">itch.io</a></p>
+            <p><b class="discord icon">discord:</b> kisielo85#0155</p>
+        </div>
     </footer>
 
 
