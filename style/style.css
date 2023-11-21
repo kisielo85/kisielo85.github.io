@@ -1,0 +1,37 @@
+:root{
+    --font: #ccc;
+    --scroll: 0px;
+    --back: #000;
+    --Hscroll:0px;
+
+    
+    color: var(--font);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{margin: 0;}
+
+h2{text-align: center;}
+ul, h3{ margin: 0; }
+
+a{color: #256dbf;}
+a:visited{color: #7b44a9;}
+
+/* icons */
+.reddit::before{background: url("../icons/reddit.svg")}
+.github::before{background: url("../icons/github.svg")}
+.youtube::before{background: url("../icons/youtube.svg")}
+.itchio::before{background: url("../icons/itchio.svg")}
+.link::before{background: url("../icons/link.svg")}
+.discord::before{background: url("../icons/discord.svg")}
+.icon::before{
+    content: "";
+    display: block;
+    float: left;
+    margin-right: 5px;
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+}
+/*  icons: https://www.iconpacks.net/  */
