@@ -1,0 +1,32 @@
+.project_list{
+    background-color: #000000;
+}
+.scroll_list{
+    width: 100%;
+    overflow-x: hidden;
+}
+#block_container{
+    display: flex;
+    padding-left: 50%;
+    padding-right: 50%;
+    width: fit-content;
+    height: fit-content;
+}
+.block{
+    margin: 10px;
+    width: 120px;
+    height: fit-content;
+    cursor: pointer;
+}
+.block img{
+    display: block;
+    width: 100%;
+    
+    border: 2px solid #be3fad;
+    border-radius: 10px;
+}
+.block p{
+    text-align: center;
+    margin: 0;
+    font-weight: 900;
+}

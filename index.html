@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/featured.css">
     <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/project_list.css">
 </head>
 <body>
     <!-- header -->
@@ -37,10 +38,10 @@
         <div class="project">
             <h2 class="p-name">Snow amogi</h2>
             <div class="image-box">
-                <input type="button" class="img-btn L" onclick="img_btn(-1,'amogi')">
-                <input type="button" class="img-btn R" onclick="img_btn(1,'amogi')">
-                <img src="gallery/amogi/0.jpg" style="z-index: 2;" id='amogi0'>
-                <img src="gallery/amogi/0.jpg" style="z-index: 1;" id='amogi1'>
+                <input type="button" class="img-btn L" onclick="img_btn(-1,'g0')">
+                <input type="button" class="img-btn R" onclick="img_btn(1,'g0')">
+                <img src="gallery/amogi/0.jpg" style="z-index: 2;" id='g0_0'>
+                <img src="gallery/amogi/0.jpg" style="z-index: 1;" id='g0_1'>
             </div>
             <div class="desc">
                 <p>I made this small amogus from snow</p>
@@ -63,10 +64,10 @@
 
         <div class="project">
             <div class="image-box" style="background: linear-gradient(50deg, var(--from), var(--to));">
-                <input type="button" class="img-btn L" onclick="img_btn(-1,'pixel')">
-                <input type="button" class="img-btn R" onclick="img_btn(1,'pixel')">
-                <img src="gallery/pixel/0.jpg" style="z-index: 2;" id='pixel0'>
-                <img src="gallery/pixel/0.jpg" style="z-index: 1;" id='pixel1'>
+                <input type="button" class="img-btn L" onclick="img_btn(-1,'g1')">
+                <input type="button" class="img-btn R" onclick="img_btn(1,'g1')">
+                <img src="gallery/pixel/0.jpg" style="z-index: 2;" id='g1_0'>
+                <img src="gallery/pixel/0.jpg" style="z-index: 1;" id='g1_1'>
             </div>
             
             <h2 class="p-name">Pixel finder</h2>
@@ -84,10 +85,10 @@
         <div class="project">
             <h2 class="p-name">Neon Sector</h2>
             <div class="image-box">
-                <input type="button" class="img-btn L" onclick="img_btn(-1,'neon_sector')">
-                <input type="button" class="img-btn R" onclick="img_btn(1,'neon_sector')">
-                <img src="gallery/neon_sector/0.jpg" style="z-index: 2;" id='neon_sector0'>
-                <img src="gallery/neon_sector/0.jpg" style="z-index: 1;" id='neon_sector1'>
+                <input type="button" class="img-btn L" onclick="img_btn(-1,'g2')">
+                <input type="button" class="img-btn R" onclick="img_btn(1,'g2')">
+                <img src="gallery/neon_sector/0.jpg" style="z-index: 2;" id='g2_0'>
+                <img src="gallery/neon_sector/0.jpg" style="z-index: 1;" id='g2_1'>
             </div>
             <div class="desc">
                 <p>a game made in Godot Engine</p>
@@ -97,6 +98,36 @@
         </div>
     </div class="featured">
 
+
+
+    <!-- project list -->
+    <div class="project_list">
+        <div class="scroll_list" id="scroll_div">
+               <!--  <input type="button" class="scroll-btn L" onclick="img_btn(-1,'neon_sector')">
+            <input type="button" class="scroll-btn R" onclick="img_btn(1,'neon_sector')"> -->
+            <div id="block_container">
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+        </div>
+        <div class="project">
+            <h2 class="p-name" id="viewer_title">Led display</h2>
+            <div class="image-box">
+                <input type="button" class="img-btn L" onclick="img_btn(-1,'viewer')">
+                <input type="button" class="img-btn R" onclick="img_btn(1,'viewer')">
+                <img src="gallery/led_display/0.jpg" style="z-index: 2;" id="viewer_0">
+                <img src="gallery/led_display/0.jpg" style="z-index: 1;" id="viewer_1">
+            </div>
+            <div class="desc" id="viewer_desc">
+                <p>6x6 display, made with Arduino UNO and some cardboard</p>
+                <p>it was a great learning experience on multiplexing</p>
+                <a target="_blank" class="instagram icon" href="https://www.instagram.com/p/Cljcgqft6sT/">instagram post</a>
+            </div>
+            
+        </div>
+        
+    </div>
     
     <!-- links -->
     <footer>
@@ -114,6 +145,8 @@
     <div style="height: 40vh; background-color: black;">
         <b style="font-size: 15px;">work in progress..</b>
     </div>
-    <script src="script.js"></script>
+    <script src="script/data.js"></script>
+    <script src="script/parallax.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
