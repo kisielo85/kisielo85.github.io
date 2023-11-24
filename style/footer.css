@@ -1,9 +1,6 @@
 footer{
     background-color: #000;
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
 }
 footer h2{
     width: 100%;
@@ -18,7 +15,9 @@ footer h2{
 }
 
 .link_list{
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: fit-content;
     margin: auto;
     text-align: center;
