@@ -3,7 +3,7 @@ gallery={
     g0: {pos:0,max:4, path: 'amogi'},
     g1: {pos:0,max:2, path: 'pixel'},
     g2: {pos:0,max:3, path: 'neon_sector'},
-    viewer: {pos:0,max:3, path: 'neon_sector'}
+    viewer: {pos:0,max:1, path: 'led_display'}
 }
 // ZMIENIĆ NA LISTE
 
@@ -16,12 +16,10 @@ projects=[
         'desc_en':`
             <p>website allowing <a target="_blank" href="https://www.reddit.com/r/place/">r/place</a> users to view their pixels</p>
             <p>works for the 2017, 2022 and 2023 events</p>
-            <p><a class="link icon" target="_blank" href="http://kisielo85.cba.pl/place">kisielo85.cba.pl/place</a></p>
+            <p><a class="link icon" target="_blank" href="https://kisielo85.github.io/pixel_finder/">website</a></p>
             <p><a class="reddit icon" target="_blank" href="https://www.reddit.com/r/place/comments/u79a4s/website_that_shows_users_placed_pixels/">original post</a></p>
             <p><a class="github icon" target="_blank" href="https://github.com/kisielo85/pixel_finder-place2022">github repo</a></p>
         `,
-
-
     },
     {
         'name': 'Neon Sector',

@@ -85,20 +85,10 @@ function list_move(x){
     
 }
 
-/*mousedown=false;
-document.body.onmousedown = function() {mousedown=true}
-document.body.onmouseup = function() {mousedown=false; prev_x=-1}
-var prev_x=-1
-function list_swipe(event){
-    if (mousedown){
-        let x = event.clientX;
-        if (prev_x==-1){prev_x=x; return}
-        move=prev_x-x
-        console.log(scroll_div.scrollLeft)
-        scroll_div.scroll(scroll_div.scrollLeft+move,0)
-        prev_x=x
-        console.log(move)
-    }
-    
-    
-}*/
+// age variable for the "about me" section
+const birthday = new Date("2003-11-09")
+const now = new Date()
+var age=now.getFullYear()-birthday.getFullYear()
+if (now.getMonth()*100+now.getDate() < birthday.getMonth()*100+birthday.getDate()) age-=1
+
+document.getElementById("age").innerHTML=age

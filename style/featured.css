@@ -1,6 +1,6 @@
 .featured{
     margin-top: 60vh;
-    background-color: #000;
+    background-color: #000000;
 }
 
 .big-text{
@@ -79,7 +79,6 @@
         margin: auto;
     }
 }
-
 
 @keyframes fade {
     0%{opacity: 1; visibility: visible;}

@@ -1,8 +1,10 @@
+
 header{
     height: 120vh;
     margin-top: calc(-60vh - var(--scroll)/2);
     background: rgb(95, 53, 154);
-    background: linear-gradient(28deg, rgba(143,53,154) 50%, rgb(10, 27, 69) 85%);
+    background: linear-gradient(28deg, rgba(142, 53, 154) 50%, rgba(10, 27, 69) 85%);
+    
     display: flex;
     align-items: center;
     position: fixed;

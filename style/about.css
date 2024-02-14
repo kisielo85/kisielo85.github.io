@@ -1,0 +1,65 @@
+:root{
+    --pixel_size: 900px;
+    --fadeH: calc(var(--pixel_size)/150*28);
+}
+
+.about-back{
+    background: url('/img/noise.png');
+    background-size: var(--pixel_size);
+    image-rendering: pixelated;
+    margin-bottom: 50px;
+}
+.about-middle{    
+    background: linear-gradient(#000000 0px, #00000000 var(--fadeH), #00000000 calc(100% - var(--fadeH)), #000000 100%),
+    linear-gradient(27deg, rgba(91, 28, 143, 0.92) 40%, rgba(30, 101, 194, 0.95) 85%);
+}
+.about{
+    background: url('/img/noise_fade.png'), url('/img/noise_fade2.png');
+    background-repeat: repeat-x;
+    background-size: var(--pixel_size);
+    background-position: top left, bottom left;
+
+    color: #e6e6e6;
+    font-weight: 600;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "title title"
+    "desc img";
+
+    padding: var(--fadeH) 6% calc(var(--fadeH) + 10px) 6%;
+}
+
+.about h1{
+    font-size: 50px;
+    text-shadow: 3px 2px 0 #00000073 ;
+    
+    grid-area: title;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+.about div{
+    font-size: 18px;
+    text-shadow: 2px 1px 0 rgba(0, 0, 0, 0.808);
+
+    max-width: 600px;
+
+    grid-area: desc;
+    margin-left: auto;
+    margin-right: 0px;
+    margin: auto 0px auto auto;
+}
+
+.about img{
+    image-rendering: auto;
+    border: 3px rgb(93, 173, 248) solid;
+    border-radius: 10px;
+
+    width: 100%;
+    max-width: 550px;
+    
+    grid-area: img;
+    margin-left: 50px;
+}
