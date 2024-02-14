@@ -1,13 +1,13 @@
 :root{
-    --pixel_size: 900px;
+    --pixel_size: 1500px;
     --fadeH: calc(var(--pixel_size)/150*28);
+    --pixel_fix: 10px
 }
 
 .about-back{
     background: url('/img/noise.png');
     background-size: var(--pixel_size);
     image-rendering: pixelated;
-    margin-bottom: 50px;
 }
 .about-middle{    
     background: linear-gradient(#000000 0px, #00000000 var(--fadeH), #00000000 calc(100% - var(--fadeH)), #000000 100%),
@@ -28,7 +28,7 @@
     "title title"
     "desc img";
 
-    padding: var(--fadeH) 6% calc(var(--fadeH) + 10px) 6%;
+    padding: var(--fadeH) 6% calc(var(--fadeH) + var(--pixel_fix)) 6%;
 }
 
 .about h1{
@@ -61,5 +61,24 @@
     max-width: 550px;
     
     grid-area: img;
-    margin-left: 50px;
+    
+    margin: auto auto auto 50px;
+}
+
+@media (max-width:850px) {
+    .about{
+        grid-template-areas:
+        "title title"
+        "img img"
+        "desc desc";
+    }
+    .about img{
+        max-height: 400px;
+        max-width: 100%;
+        width: auto;
+        margin: auto;
+    }
+    .about div{
+        margin: auto;
+    }
 }
