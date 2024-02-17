@@ -48,6 +48,9 @@
     max-width: 95%;
     margin-left: auto;
     
+    aspect-ratio: 4/3;
+    height: 550px;
+    
     background: rgb(120, 62, 169);
     --from:rgb(157, 65, 170);
     --to:rgb(57, 88, 167);
@@ -60,9 +63,8 @@
 .image-box img{
     grid-column: 1;
     grid-row: 1;
-    aspect-ratio: 4/3;
     width: 100%;
-    max-height: 550px;
+    height: 100%;
     animation-fill-mode: forwards;
     border-radius: 20px;
 }
@@ -72,8 +74,8 @@
         grid-template-columns: none;
         grid-template-areas: "p-name""img""desc";
     }
-    .image-box img{
-        max-height: 350px;
+    .image-box{
+        height: 350px;
     }
     .image-box{
         margin: auto;

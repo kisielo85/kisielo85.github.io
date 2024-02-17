@@ -5,7 +5,6 @@ gallery={
     g2: {pos:0,max:3, path: 'neon_sector'},
     viewer: {pos:0,max:1, path: 'led_display'}
 }
-// ZMIENIĆ NA LISTE
 
 projects=[
     {
@@ -40,6 +39,18 @@ projects=[
             <p>6x6 display, made with Arduino UNO and some cardboard</p>
             <p>it was a great learning experience on multiplexing</p>
             <a target="_blank" class="instagram icon" href="https://www.instagram.com/p/Cljcgqft6sT/">instagram post</a>
+        `,
+    },
+    {
+        'name': 'The Amazing Game',
+        'path': 'the_amazing_game',
+        'max_img': 3,
+
+        'desc_en':`
+            <p>A console game written in C++</p>
+            <p>It was my first "big" project, made it with a friend while we were learning C++ back in 2018</p>
+            <p>Creating it using only the default libraries wasn't easy, but we took it as a challenge and managed to get it done</p>
+            <p><a class="youtube icon" target="_blank" href="https://youtu.be/2Jsje4hxERo/">gameplay video</a></p>
         `,
     },
 ]
