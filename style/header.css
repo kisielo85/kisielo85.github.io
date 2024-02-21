@@ -18,11 +18,12 @@ header{
 }
 
 .short-desc{
+    padding: 0px 20px 0px 20px;
     font-size: 20px;
-    max-width: 470px;
     width: fit-content;
     margin: auto;
-    overflow-wrap: break-word;
+    text-align: center;
+    text-wrap: balance;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -61,5 +62,8 @@ b.aka{
         display: block;
         margin: auto;
         width: 160px;
+    }
+    .short-desc{
+        margin-top: 10px;
     }
 }

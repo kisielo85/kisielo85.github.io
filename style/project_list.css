@@ -2,10 +2,27 @@
     background-color: #000000;
 }
 .scroll_list{
-    width: 100%;
+    --clr:#4faaffd2;
+    --width: 55px;
+    --blurH: 15px;
+    background:
+    linear-gradient(
+    #000000 0%,
+    #00000000 15%,
+    #000000 100%),
+    
+    linear-gradient(90deg,
+    #00000000 calc(50% - var(--width) - var(--blurH)),
+    var(--clr) calc(50% - var(--width)),
+    var(--clr) calc(50% + var(--width)),
+    #00000000 calc(50% + var(--width) + var(--blurH)));
+
+    margin-top: 50px;
+    margin-bottom: 20px;
     overflow-x: hidden;
 }
 #block_container{
+    padding: 10px;
     display: flex;
     padding-left: 50%;
     padding-right: 50%;
@@ -13,7 +30,7 @@
     height: fit-content;
 }
 .block{
-    margin: 10px;
+    padding: 0px 12px 0px 8px;
     width: 120px;
     height: fit-content;
     cursor: pointer;
