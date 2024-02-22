@@ -47,10 +47,23 @@ projects=[
         'max_img': 3,
 
         'desc_en':`
-            <p>A console game written in C++</p>
+            <p>Console game written in C++</p>
             <p>It was my first "big" project, made it with a friend while we were learning C++ back in 2018</p>
             <p>Creating it using only the default libraries wasn't easy, but we took it as a challenge and managed to get it done</p>
             <p><a class="youtube icon" target="_blank" href="https://youtu.be/2Jsje4hxERo/">gameplay video</a></p>
         `,
     },
+    {
+        'name': 'TebTableBot',
+        'path': 'tebtablebot',
+        'max_img': 3,
+
+        'desc_en':`
+            <p>Discord bot connected to my schools class schedule</p>
+            <p>It can generate lesson timetables, quickly tell you where to find a class or a teacher, and notify you where is your next lesson</p>
+            <p><a class="github icon" target="_blank" href="https://github.com/kisielo85/TebTableBot">github repo</a></p>
+        `,
+    },
 ]
+
+

@@ -26,6 +26,7 @@ a:visited{color: #7b44a9;}
 .link::before{background: url("../icons/link.svg")}
 .discord::before{background: url("../icons/discord.svg")}
 .instagram::before{background: url("../icons/instagram.svg")}
+.download::before{background: url("../icons/download.svg")}
 .icon::before{
     content: "";
     display: block;
