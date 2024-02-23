@@ -56,7 +56,7 @@ projects=[
     {
         'name': 'TebTableBot',
         'path': 'tebtablebot',
-        'max_img': 3,
+        'max_img': 4,
 
         'desc_en':`
             <p>Discord bot connected to my schools class schedule</p>
@@ -64,6 +64,16 @@ projects=[
             <p><a class="github icon" target="_blank" href="https://github.com/kisielo85/TebTableBot">github repo</a></p>
         `,
     },
+    {
+        'name': 'amogi skin generator',
+        'path': 'amogi_skin_generator',
+        'max_img': 3,
+
+        'desc_en':`
+            <p>When playing Minecraft with friends, we sometimes like to choose matching skins.<br>
+            And after finding this <a href="https://pl.namemc.com/skin/7fd3630174f98f59">Muscular Amogus</a> on NameMC, I thought it would be hilarious to have a Bedwars team of these</p>
+            <p>So I've put together a simple script, for generating different colored crewmates</p>
+            <p><a class="download icon" target="_blank" href="/tiny_projects/amogi_skin_generator.zip">download</a></p>
+        `,
+    },
 ]
-
-
