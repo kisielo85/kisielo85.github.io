@@ -76,4 +76,15 @@ projects=[
             <p><a class="download icon" target="_blank" href="/tiny_projects/amogi_skin_generator.zip">download</a></p>
         `,
     },
+    {
+        'name': 'Universal remote',
+        'path': 'arduino_remote',
+        'max_img': 2,
+
+        'desc_en':`
+            <p>This remote is capable of saving up to 40 IR signals and re-creating them</p>
+            <p>Made with Arduino UNO and some cardboard, it works with basically anything controlled with ifrared light</p>
+            <p><a class="instagram icon" target="_blank" href="https://www.instagram.com/p/C4BjZfgIlvN/?img_index=3">instagram post</a></p>
+        `,
+    },
 ]
