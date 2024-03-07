@@ -1,6 +1,5 @@
 
 gallery={
-    g0: {pos:0,max:4, path: 'amogi'},
     g1: {pos:0,max:2, path: 'pixel'},
     g2: {pos:0,max:3, path: 'neon_sector'},
     viewer: {pos:0,max:1, path: 'led_display'}

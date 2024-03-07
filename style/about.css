@@ -27,6 +27,8 @@
     grid-template-areas:
     "title title"
     "desc img";
+    
+    grid-gap: 20px;
 
     padding: var(--fadeH) 6% calc(var(--fadeH) + var(--pixel_fix)) 6%;
 }
@@ -36,7 +38,7 @@
     text-shadow: 3px 2px 0 #00000073 ;
     
     grid-area: title;
-    margin: 0px 0px 20px 0px;
+    margin: 0px;
     text-align: center;
 }
 
@@ -48,8 +50,6 @@
     max-width: 600px;
 
     grid-area: desc;
-    margin-left: auto;
-    margin-right: 0px;
     margin: auto 0px auto auto;
 }
 
@@ -60,10 +60,7 @@
 
     width: 100%;
     max-width: 550px;
-    
     grid-area: img;
-    
-    margin: auto auto auto 50px;
 }
 
 @media (max-width:850px) {

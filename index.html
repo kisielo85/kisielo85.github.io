@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kisielo85</title>
-    <link rel="stylesheet" href="style/style.css?v=23_02_2024">
-    <link rel="stylesheet" href="style/header.css?v=23_02_2024">
-    <link rel="stylesheet" href="style/featured.css?v=23_02_2024">
-    <link rel="stylesheet" href="style/footer.css?v=23_02_2024">
-    <link rel="stylesheet" href="style/project_list.css?v=23_02_2024">
-    <link rel="stylesheet" href="style/about.css?v=23_02_2024">
+    <link rel="stylesheet" href="style/style.css?v=07_03_2024">
+    <link rel="stylesheet" href="style/header.css?v=07_03_2024">
+    <link rel="stylesheet" href="style/featured.css?v=07_03_2024">
+    <link rel="stylesheet" href="style/footer.css?v=07_03_2024">
+    <link rel="stylesheet" href="style/project_list.css?v=07_03_2024">
+    <link rel="stylesheet" href="style/about.css?v=07_03_2024">
 </head>
 <body>
     <!-- header -->
@@ -37,38 +37,16 @@
         </div>
 
         <div class="project">
-            <h2 class="p-name">Snow amogi</h2>
-            <div class="image-box">
-                <input type="button" class="img-btn L" onclick="img_btn(-1,'g0')">
-                <input type="button" class="img-btn R" onclick="img_btn(1,'g0')">
-                <img src="gallery/amogi/0.jpg" style="z-index: 2;" id='g0_0'>
-                <img src="gallery/amogi/thumbnail.jpg" style="z-index: 1;" id='g0_1'>
-            </div>
-            <div class="desc">
-                <p>I made this small amogus from snow</p>
-                <h3>Pros:</h3>
-                <ul>
-                    <li>smol</li>
-                    <li>cute</li>
-                    <li>cool 😎</li>
-                    <li>amungus reference</li>
-                    <li>sussy baka</li>
-                </ul><br>
-
-                <h3>Cons:</h3>
-                <ul>
-                    <li>it melted 😭</li>
-                </ul>
-            </div>
-            
-        </div>
-
-        <div class="project">
             <div class="image-box" style="background: linear-gradient(50deg, var(--from), var(--to));">
                 <input type="button" class="img-btn L" onclick="img_btn(-1,'g1')">
                 <input type="button" class="img-btn R" onclick="img_btn(1,'g1')">
-                <img src="gallery/pixel/0.jpg" style="z-index: 2;" id='g1_0'>
-                <img src="gallery/pixel/thumbnail.jpg" style="z-index: 1;" id='g1_1'>
+                <img src="gallery/pixel/thumbnail.jpg" style="z-index: 1;" id='g1_new'>
+                <div class="loading-fade" id="g1_fade">
+                    <div class="box">
+                        <div id="g1_txt"></div>
+                        <div class="bar"><div class="progress" id="g1_progress"></div></div>
+                    </div>
+                </div>
             </div>
             
             <h2 class="p-name">Pixel finder</h2>
@@ -88,8 +66,13 @@
             <div class="image-box">
                 <input type="button" class="img-btn L" onclick="img_btn(-1,'g2')">
                 <input type="button" class="img-btn R" onclick="img_btn(1,'g2')">
-                <img src="gallery/neon_sector/0.jpg" style="z-index: 2;" id='g2_0'>
-                <img src="gallery/neon_sector/thumbnail.jpg" style="z-index: 1;" id='g2_1'>
+                <img src="gallery/neon_sector/thumbnail.jpg" style="z-index: 1;" id='g2_new'>
+                <div class="loading-fade" id="g2_fade">
+                    <div class="box">
+                        <div id="g2_txt"></div>
+                        <div class="bar"><div class="progress" id="g2_progress"></div></div>
+                    </div>
+                </div>
             </div>
             <div class="desc">
                 <p>a game made in Godot Engine</p>
@@ -133,8 +116,13 @@
             <div class="image-box">
                 <input type="button" class="img-btn L" onclick="img_btn(-1,'viewer')">
                 <input type="button" class="img-btn R" onclick="img_btn(1,'viewer')">
-                <img src="gallery/led_display/0.jpg" style="z-index: 2;" id="viewer_0">
-                <img src="gallery/led_display/0.jpg" style="z-index: 1;" id="viewer_1">
+                <img src="gallery/led_display/thumbnail.jpg" style="z-index: 1;" id="viewer_new">
+                <div class="loading-fade" id="viewer_fade">
+                    <div class="box">
+                        <div id="viewer_txt"></div>
+                        <div class="bar"><div class="progress" id="viewer_progress"></div></div>
+                    </div>
+                </div>
             </div>
             <div class="desc" id="viewer_desc">
                 <p>6x6 display, made with Arduino UNO and some cardboard</p>
@@ -160,8 +148,8 @@
 
     
     <div style="height: 10vh; background-color: black;"></div>
-    <script src="script/data.js?v=23_02_2024"></script>
-    <script src="script/effects.js?v=23_02_2024"></script>
-    <script src="script/script.js?v=23_02_2024"></script>
+    <script src="script/data.js?v=07_03_2024"></script>
+    <script src="script/effects.js?v=07_03_2024"></script>
+    <script src="script/script.js?v=07_03_2024"></script>
 </body>
 </html>
