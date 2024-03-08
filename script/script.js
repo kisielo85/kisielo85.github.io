@@ -8,7 +8,6 @@ var cache={}
 var changing={}
 Image.prototype.load = function(url,id){
     let fade=document.getElementById(id+'_fade')
-    let fast_load=true
     //canceling unfinished loading
     if (changing[id]){
         changing[id][0].remove()
@@ -36,6 +35,21 @@ Image.prototype.load = function(url,id){
         return
     }
 
+    let time_left=-1
+    let bar_showed=false
+    
+    function show_loading(){
+        bar_showed=true
+        fade.classList.remove('fade')
+        fade.classList.add('fade-in')
+        fade.style.opacity=1
+    }
+
+    // loading not started within 300ms : show progress bar
+    setTimeout(() => {
+        if (time_left == -1){show_loading()}
+    }, "300");
+
     document.getElementById(id+'_txt').innerHTML=url.slice(8)
     let progress_div=document.getElementById(id+'_progress')
     
@@ -49,19 +63,24 @@ Image.prototype.load = function(url,id){
         progress_div.style.width='0%'
     };
 
+    let load_timer=[]
     xmlHTTP.onprogress = function(e) {
         let progress = parseInt((e.loaded / e.total) * 100);
-        
-        // showing the progress bar only if loading is slow
-        if (fast_load){
-            if (progress<20){
-                fast_load=false
-                fade.classList.remove('fade')
-                fade.classList.add('fade-in')
-                fade.style.opacity=1
-            }
+        progress_div.style.width=progress+'%'
+
+        if (bar_showed){ return }
+
+        if (time_left==-1){
+            time_left=1
+            load_timer=[progress,Date.now()]
         }
-        else{ progress_div.style.width=progress+'%' }
+        else{
+            let pr1 = (Date.now()-load_timer[1])/(progress-load_timer[0])
+            time_left=(100-progress)*pr1/1000
+            // more than a second left - show progress bar
+            if (!bar_showed && time_left>1){show_loading()}
+        }
+
     };
 
     xmlHTTP.onload = function() {
