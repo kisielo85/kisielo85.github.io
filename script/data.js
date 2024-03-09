@@ -26,7 +26,7 @@ projects=[
 
         'desc_en':`
             <p>a game made in Godot Engine</p>
-            <a target="_blank" class="itchio icon" href="https://kisielo85.itch.io/neon-sector">kisielo85.itch.io/neon-sector</a>
+            <a target="_blank" class="itchio icon" href="https://kisielo85.itch.io/neon-sector">itchio page</a>
         `,
     },
     {
@@ -85,5 +85,17 @@ projects=[
             <p>Made with Arduino UNO and some cardboard, it works with basically anything controlled with ifrared light</p>
             <p><a class="instagram icon" target="_blank" href="https://www.instagram.com/p/C4BjZfgIlvN/?img_index=3">instagram post</a></p>
         `,
+    },
+    {
+        'name': 'Pong Online',
+        'path': 'pong_online',
+        'max_img': 2,
+
+        'desc_en':`
+            <p>A spin on the classic pong game</p>
+            <p>My main focus here was to make an online multiplayer game, the connection is made by sharing a 5-character code that's being decrypted into the host's IP adress</p>
+            <p><a class="youtube icon" target="_blank" href="https://youtu.be/6CG9Ekcmb7Y">gameplay video</a></p>
+            <a class="itchio icon" target="_blank" href="https://kisielo85.itch.io/pong-online">itchio page</a>
+            `,
     },
 ]
