@@ -96,6 +96,20 @@ projects=[
             <p>My main focus here was to make an online multiplayer game, the connection is made by sharing a 5-character code that's being decrypted into the host's IP adress</p>
             <p><a class="youtube icon" target="_blank" href="https://youtu.be/6CG9Ekcmb7Y">gameplay video</a></p>
             <a class="itchio icon" target="_blank" href="https://kisielo85.itch.io/pong-online">itchio page</a>
-            `,
+        `,
+    },
+    {
+        'name': 'proc_passw86',
+        'path': 'proc_passw',
+        'max_img': 2,
+
+        'desc_en':`
+            <p>This one is more of a programming challenge</p>
+            <p>Me and my friends were making simple programs that prompts the user for a password<br>
+            The goal was to somehow guess, hack, or brute-force the correct string.</p>
+            <p>I decided to make my script open-source, but it's scrambled, unreadable, and is probably the ugliest code I've ever made.
+            <p>So if you're up for the challenge, go ahead and download it. The rules are simple: You can test and edit the code however you want, but a password must work for the original unedited version. Good luck!</p>
+            <a class="download icon" target="_blank" href="/tiny_projects/proc_passw86.bat">download</a></p>
+        `,
     },
 ]
