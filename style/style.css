@@ -15,7 +15,10 @@ body{
 h2{text-align: center;}
 ul, h3{ margin: 0; }
 
-a{color: #256dbf;}
+a{
+    color: #256dbf;
+    text-decoration: none;
+}
 a:visited{color: #7b44a9;}
 
 /* icons */
