@@ -125,26 +125,36 @@ function img_btn(x,id){
 // --- project viewer ---
 const block_container=document.getElementById('block_container')
 function place_blocks(){
-    id=0
+    
     block_container.innerHTML=''
-    projects.forEach(p=>{
-        block_container.innerHTML+=`<div class="block" id='th${id}' onclick='thumb(${id})'><img src="gallery/${p.path}/thumbnail.jpg"><p>${p.name}<p></div>`
-        id++;
-    })
+    for (let i=-1; i<2; i++){
+        id=0
+        // thumbs with id -1 and 1 redirect to id 0
+        projects.forEach(p=>{
+            block_container.innerHTML+=`<div class="block" id='th_${i}_${id}' onclick='thumb(${id},${i})'><img src="gallery/${p.path}/thumbnail.jpg"><p>${p.name}<p></div>`
+            id++;
+        })
+    }
 }
 place_blocks()
 
 // scroling to the first element
 const scroll_div=document.getElementById('scroll_div')
 var blocks = document.querySelectorAll('div.block');
-scroll_div.scroll(blocks[2].offsetLeft
+scroll_div.scroll(blocks[11].offsetLeft
     -scroll_div.offsetWidth/2
-    +blocks[2].offsetWidth/2 ,0)
+    +blocks[11].offsetWidth/2 ,0)
 
 
 // clicking a thumbnail
-function thumb(id){
+function thumb(id,version){
     select=id
+
+    // versions -1 and 1 are "dummy thumbnails", they redirect to the correct one
+    if (version !=0){
+        const th_width=document.getElementById("th_0_0").offsetWidth
+        document.getElementById("scroll_div").scrollLeft-=version*th_width*projects.length
+    }
     list_move(0)
 }
 
@@ -155,7 +165,7 @@ const max_select=projects.length
 function list_move(x){
     select+=x
     if (select<0) select=0; else if (select>max_select) select = max_select;
-    t=document.getElementById("th"+select)
+    t=document.getElementById("th_0_"+select)
         t.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',
@@ -169,7 +179,6 @@ function list_move(x){
     gallery.viewer.path=p.path
     gallery.viewer.max=p.max_img
     gallery.viewer.pos=0
-    
 }
 
 // age variable for the "about me" section
