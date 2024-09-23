@@ -6,6 +6,7 @@ const viewer={
 // image loading progress logic
 var cache={}
 var changing={}
+var auto_view=false
 Image.prototype.load = function(url,id){
     let fade=document.getElementById(id+'_fade')
     //canceling unfinished loading
@@ -26,6 +27,10 @@ Image.prototype.load = function(url,id){
         // hide the progress bar
         fade.classList.remove('fade-in')
         fade.classList.add('fade')
+
+        if (auto_view){
+            auto_view_tick(true)
+        }
     }
 
     // cached img
@@ -113,7 +118,8 @@ for (g in gallery){
 }
 
 // buttons for gallery viewing
-function img_btn(x,id){
+function img_btn(x,id,is_auto=false){
+    if(!is_auto){set_auto_view()}
     g=gallery[id]
 
     g.pos+=x
@@ -148,6 +154,7 @@ scroll_div.scroll(blocks[11].offsetLeft
 
 // clicking a thumbnail
 function thumb(id,version){
+    set_auto_view()
     select=id
 
     // versions -1 and 1 are "dummy thumbnails", they redirect to the correct one
@@ -181,10 +188,41 @@ function list_move(x){
     gallery.viewer.pos=0
 }
 
-// age variable for the "about me" section
-const birthday = new Date("2003-11-09")
-const now = new Date()
-var age=now.getFullYear()-birthday.getFullYear()
-if (now.getMonth()*100+now.getDate() < birthday.getMonth()*100+birthday.getDate()) age-=1
 
-document.getElementById("age").innerHTML=age
+var scrollTimeout
+function set_auto_view(){
+    console.log("sett")
+    const viewer=document.getElementById('viewer_new')
+    const H_viewer=viewer.getBoundingClientRect().top+viewer.offsetHeight/2
+    //if at least half of the image is on screen
+    if (auto_view == (H_viewer>0&&H_viewer<window.innerHeight)){
+        // refresh timer
+        if (auto_view){
+            console.log("refressz")
+            clearTimeout(scrollTimeout)
+            scrollTimeout = setTimeout(auto_view_tick,15000)
+        }
+        return
+    }
+    auto_view = !auto_view
+    console.log("set",auto_view)
+
+    if (auto_view){
+        scrollTimeout = setTimeout(auto_view_tick,15000)
+    }else{
+        clearTimeout(scrollTimeout)
+    }
+
+    console.log("AUTO",auto_view)
+}
+
+
+function auto_view_tick(img_done=false){
+    console.log("tick",auto_view,img_done)
+    if (!auto_view){clearTimeout(scrollTimeout); return }
+    if (img_done){scrollTimeout = setTimeout(auto_view_tick,6000); return }
+
+    const g=gallery['viewer']
+    if (g.pos<g.max){img_btn(1,'viewer',true)}
+    else {list_move(1)}
+}

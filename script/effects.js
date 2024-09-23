@@ -1,11 +1,18 @@
 const r = document.querySelector(':root'); //parallax
 
 
-function parralax(){
+
+function scrolled(){
+    //parralax
     r.style.setProperty('--scroll',window.scrollY+'px')
+
+    set_auto_view() 
 }
-parralax()
-window.addEventListener("scroll", parralax);
+
+scrolled()
+window.addEventListener("scroll", scrolled);
+
+
 
 
 // making the bottom fade texture in the "about me" section
@@ -21,3 +28,12 @@ function pixel_snap(){
 }
 pixel_snap()
 window.addEventListener('resize',pixel_snap)
+
+
+// age variable for the "about me" section
+const birthday = new Date("2003-11-09")
+const now = new Date()
+var age=now.getFullYear()-birthday.getFullYear()
+if (now.getMonth()*100+now.getDate() < birthday.getMonth()*100+birthday.getDate()) age-=1
+
+document.getElementById("age").innerHTML=age
