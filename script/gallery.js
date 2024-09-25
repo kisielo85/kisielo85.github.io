@@ -7,8 +7,9 @@ const viewer={
 var cache={}
 var changing={}
 var auto_view=false
-Image.prototype.load = function(url,id){
+Image.prototype.load = function(url,id,is_auto=false){
     let fade=document.getElementById(id+'_fade')
+    let img_scroll_t=scrollTimeout
     //canceling unfinished loading
     if (changing[id]){
         changing[id][0].remove()
@@ -28,8 +29,8 @@ Image.prototype.load = function(url,id){
         fade.classList.remove('fade-in')
         fade.classList.add('fade')
 
-        if (auto_view){
-            auto_view_tick(true)
+        if (is_auto){
+            auto_view_tick(img_scroll_t)
         }
     }
 
@@ -98,7 +99,7 @@ Image.prototype.load = function(url,id){
 };
 
 //changing images
-function set_img(img,id){
+function set_img(img,id,is_auto=false){
     old_img=document.getElementById(id+'_new')
     old_img.style.zIndex=2
 
@@ -108,7 +109,7 @@ function set_img(img,id){
     new_img=new Image();
     new_img.hidden=true
     new_img.style.zIndex=1
-    new_img.load(img,id)
+    new_img.load(img,id,is_auto)
     old_img.parentElement.appendChild(new_img)
 }
 
@@ -119,12 +120,13 @@ for (g in gallery){
 
 // buttons for gallery viewing
 function img_btn(x,id,is_auto=false){
+    // if pressed by user, refresh timer
     if(!is_auto){set_auto_view()}
     g=gallery[id]
 
     g.pos+=x
     if (g.pos<0) g.pos=g.max; else if (g.pos>g.max) g.pos=0;
-    set_img(`gallery/${g.path}/${g.pos}.jpg`, id)
+    set_img(`gallery/${g.path}/${g.pos}.jpg`, id,is_auto)
 }
 
 
@@ -166,7 +168,7 @@ function thumb(id,version){
 }
 
 
-var select=0;
+var select=2;
 
 const max_select=projects.length
 function list_move(x){
@@ -189,40 +191,42 @@ function list_move(x){
 }
 
 
+// check if scrollTimeout should run
 var scrollTimeout
 function set_auto_view(){
-    console.log("sett")
     const viewer=document.getElementById('viewer_new')
     const H_viewer=viewer.getBoundingClientRect().top+viewer.offsetHeight/2
+    
     //if at least half of the image is on screen
     if (auto_view == (H_viewer>0&&H_viewer<window.innerHeight)){
         // refresh timer
         if (auto_view){
-            console.log("refressz")
             clearTimeout(scrollTimeout)
             scrollTimeout = setTimeout(auto_view_tick,15000)
         }
         return
     }
     auto_view = !auto_view
-    console.log("set",auto_view)
 
-    if (auto_view){
+    if (auto_view){ // start timer
         scrollTimeout = setTimeout(auto_view_tick,15000)
-    }else{
+    }else{ // stop timer
         clearTimeout(scrollTimeout)
     }
-
-    console.log("AUTO",auto_view)
 }
 
 
-function auto_view_tick(img_done=false){
-    console.log("tick",auto_view,img_done)
-    if (!auto_view){clearTimeout(scrollTimeout); return }
-    if (img_done){scrollTimeout = setTimeout(auto_view_tick,6000); return }
+function auto_view_tick(img_t=0){
+    // 0 - done waiting, time for new image
+    if (img_t==0){
+        const g=gallery['viewer']
+        if (g.pos<g.max){img_btn(1,'viewer',true)}
+        else {list_move(1)}
+    }
+    // timeout id is old, or disabled
+    else if (img_t != scrollTimeout || !auto_view){
+        return;
+    }
 
-    const g=gallery['viewer']
-    if (g.pos<g.max){img_btn(1,'viewer',true)}
-    else {list_move(1)}
+    scrollTimeout = setTimeout(auto_view_tick,6000)
 }
