@@ -60,6 +60,7 @@ projects=[
         'desc_en':`
             <p>Discord bot connected to my schools class schedule</p>
             <p>It can generate lesson timetables, quickly tell you where to find a class or a teacher, and notify you where is your next lesson</p>
+            <p>Made with my classmate: <a target="_blank" href="https://le-programer.github.io/">Le-programer</a></p>
             <p><a class="github icon" target="_blank" href="https://github.com/kisielo85/TebTableBot">github repo</a></p>
         `,
     },
