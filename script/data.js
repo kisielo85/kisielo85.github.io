@@ -114,4 +114,17 @@ projects = [
             <a class="download icon" target="_blank" href="/tiny_projects/proc_passw86.bat">download</a></p>
         `,
     },
+    {
+        'name': 'k85 wallpaper tool',
+        'path': 'k85_wallpaper_tool',
+        'max_img': 3,
+
+        'desc_en': `
+            <p>A simple tool for setting wallpapers</p>
+            <p>If you ever wanted to set a wallpaper that would span across multiple monitors, you probably know how hard it is to make it look seamless.</p>
+            <p>This script quickly solves this issue, it takes into account differences in display sizes as well as the gaps between them, 
+            allowing you to set a perfectly aligned wallpaper.</p>
+            <a class="github icon" target="_blank" href="https://github.com/kisielo85/k85-wallpaper-tool">github repo</a></p>
+        `,
+    },
 ]
