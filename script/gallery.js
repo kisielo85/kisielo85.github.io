@@ -148,10 +148,10 @@ place_blocks()
 // scroling to the first element
 const scroll_div = document.getElementById('scroll_div')
 var blocks = document.querySelectorAll('div.block');
-scroll_div.scroll(blocks[11].offsetLeft
+const scroll_to = projects.length + projects.findIndex(item => item.path === gallery.viewer.path);
+scroll_div.scroll(blocks[scroll_to].offsetLeft
     - scroll_div.offsetWidth / 2
-    + blocks[11].offsetWidth / 2, 0)
-
+    + blocks[scroll_to].offsetWidth / 2, 0)
 
 // clicking a thumbnail
 function thumb(id, version) {
@@ -197,20 +197,14 @@ function set_auto_view() {
     const H_viewer = viewer.getBoundingClientRect().top + viewer.offsetHeight / 2
 
     //if at least half of the image is on screen
-    if (auto_view == (H_viewer > 0 && H_viewer < window.innerHeight)) {
-        // refresh timer
-        if (auto_view) {
-            clearTimeout(scrollTimeout)
-            scrollTimeout = setTimeout(auto_view_tick, 15000)
-        }
-        return
-    }
-    auto_view = !auto_view
-
+    auto_view = (H_viewer > 0 && H_viewer < window.innerHeight)
+    
     if (auto_view) { // start timer
-        scrollTimeout = setTimeout(auto_view_tick, 15000)
-    } else { // stop timer
         clearTimeout(scrollTimeout)
+        scrollTimeout = setTimeout(auto_view_tick, 30000)
+    } else if (scrollTimeout) { // stop timer
+        clearTimeout(scrollTimeout)
+        scrollTimeout=false
     }
 }
 
@@ -227,5 +221,5 @@ function auto_view_tick(img_t = 0) {
         return;
     }
 
-    scrollTimeout = setTimeout(auto_view_tick, 6000)
+    scrollTimeout = setTimeout(auto_view_tick, 10000)
 }

@@ -1,7 +1,7 @@
 // status of the image boxes
 gallery = {
     g1: { pos: 0, max: 2, path: 'pixel' },
-    g2: { pos: 0, max: 3, path: 'neon_sector' },
+    g2: { pos: 0, max: 3, path: 'k85_wallpaper_tool' },
     viewer: { pos: 0, max: 1, path: 'led_display' }
 }
 
@@ -84,7 +84,7 @@ projects = [
 
         'desc_en': `
             <p>This remote is capable of saving up to 40 IR signals and re-creating them</p>
-            <p>Made with Arduino UNO and some cardboard, it works with basically anything controlled with ifrared light</p>
+            <p>Made with Arduino UNO and some cardboard, it works with basically anything controlled with infrared light</p>
             <p><a class="instagram icon" target="_blank" href="https://www.instagram.com/p/C4BjZfgIlvN/?img_index=3">instagram post</a></p>
         `,
     },

@@ -131,26 +131,31 @@
 }
 
 .img-btn{
-    width: 40px;
-    height: 40px;
-    
-    margin: 10px;
-    top: 50%;
-    margin-top: -20px;
+    display: block;
+    width: 50px;
+    height: calc(100% - 8px);
+    margin: 4px;
     
     border: none;
     position: absolute;
     z-index: 5;
     left: 0px;
     font-size: 60px;
-    border-radius: 100%;
+    border-radius: 0px 20px 20px 0px;
     background-color: #ffffff21;
-    background-image: url("../img/arrow.png");
-    background-size: 18px;
+    background: url("../img/arrow.png"), linear-gradient(to left, #00000090, #00000000);
+    background-size: 18px, auto;
     background-position: center;
     background-repeat: no-repeat;
 }
 .img-btn.R{left: auto;right: 0px;}
 .img-btn.L{transform: scaleX(-1);}
-.img-btn:hover{background-color: #ffffff49;}
-.img-btn:active{background-color: #c9c9c920;}
+.img-btn:hover{
+    cursor: pointer;
+    background: url("../img/arrow.png"), linear-gradient(to left, #ffffff30, #ffffff00);
+    filter: brightness(0.5);
+    background-size: 18px, auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.img-btn:active{filter: brightness(0.1);}
